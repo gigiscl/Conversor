@@ -1,0 +1,36 @@
+package conversor;
+
+import javax.swing.JOptionPane;
+
+public class Temperaturas extends Conversor {
+	
+	public double valorConversion;
+	//el equivalente en celsius
+	private static double fahrenheit  = 33.8;
+	private static double kelvin = 274.15;
+	private static double rankine = 273,15;
+	
+
+	public double operarDeExtranjeraAPesos(String monedaElegida, double grados) {
+		switch (monedaElegida) {
+			case "Dolares a pesos":
+				this.valorConversion = grados * this.fahrenheit;	
+				JOptionPane.showMessageDialog(null, (grados + " Celsius son: " + Math.floor(this.valorConversion) + " Fahrenheit." ));
+				break;
+			case "Euros a pesos":
+				this.valorConversion = grados * this.euro;
+				JOptionPane.showMessageDialog(null, (grados + " euros son: " +Math.floor(this.valorConversion) + " ARS."));    
+				break;
+			case "Libras Esterlinas a pesos":
+				this.valorConversion = grados * this.libra;
+				JOptionPane.showMessageDialog(null, (grados + " libras esterlinas son: " + Math.floor(this.valorConversion) + " ARS."));
+				break;
+			default:
+				break;
+			}
+	
+	
+		return grados;
+	}
+
+}

@@ -1,0 +1,58 @@
+package conversor;
+
+
+//import java.util.Currency;
+import javax.swing.JOptionPane;
+
+public class Monedas extends Conversor{
+	
+	public double tasaDivisa;
+	//Currency ars = Currency.getInstance("ARS");
+	public static double dolar = 200.10;
+	public static double euro = 215.62;
+	public static double libra = 243.67;
+	public static double yen = 1.52;
+	public static double won = 0.15;
+	
+	
+	
+	public double operarDePesosA(String monedaElegida, double pesos) {
+		
+		switch (monedaElegida) {
+		case "Pesos a Dolares":
+	        //Currency usd = Currency.getInstance("USD");
+	        //tasaDivisa =  usd.getNumericCode() / ars.getNumericCode();
+			//System.out.println("Se ingresaron " + tasaDivisa + " pesos");
+			
+			this.tasaDivisa = pesos / this.dolar;
+			
+			JOptionPane.showMessageDialog(null, (pesos + " pesos son: " + this.tasaDivisa + " USD." ));
+			break;
+		case "Pesos a Euros":
+			   //Currency eur = Currency.getInstance("EUR");
+	            //tasaDivisa = eur.getNumericCode() / ars.getNumericCode();
+	            //System.out.println("====DEBUG valor euro "+ tasaDivisa);      
+				this.tasaDivisa = pesos / this.euro;
+	            JOptionPane.showMessageDialog(null, (pesos + " pesos son: " + this.tasaDivisa + " EUR."));    
+			break;
+		case "Pesos a Libras Esterlinas":
+			this.tasaDivisa = pesos / this.libra;
+            JOptionPane.showMessageDialog(null, (pesos + " pesos son: " + this.tasaDivisa + " Libras Esterlinas."));
+			break;
+		case "Pesos a Yen Japonés":
+			this.tasaDivisa = pesos / this.yen;
+            JOptionPane.showMessageDialog(null, (pesos + " pesos son: " + this.tasaDivisa + " yenes."));
+			break;
+		case "Pesos a Won sul-coreano":
+			this.tasaDivisa = pesos / this.won;
+            JOptionPane.showMessageDialog(null, (pesos + " pesos son: " + this.tasaDivisa + " wones."));
+			break;	
+		default:
+			break;
+		}
+		
+		
+		return pesos;
+	}
+
+}
